@@ -175,12 +175,8 @@ function searchAdmin(){
 
 function validateAdmin(foundAdmin)
 {
-    // var adminEmailLogin = document.getElementById("adminemail").value;
-    // var adminPasswordLogin = document.getElementById("adminpsw").value;
-
     if(foundAdmin)
     {
-       // alert("Login Successful");
         hideAdminLogin();
         window.location.href = "../AdminEvents.html";
         return false;
@@ -208,7 +204,6 @@ function searchCustomer(){
     getFMEvents();
     document.getElementById("eventTable").style.display = "none";
 
-    //const customersUrl = "https://localhost:5001/api/customer";
     const customersUrl = "https://farmersmarketapi1.herokuapp.com/api/customer";
 
     fetch(customersUrl).then(function(response){
@@ -259,7 +254,7 @@ function validateCustomer(found, _customerfirstname, _customerlastname, _custome
 {
     if(found)
     {
-        alert("Login Successful");
+        //alert("Login Successful");
         hideCustomerLogin();
         displayCustomerProfile(_customerfirstname, _customerlastname, _customeremail, _customerid, _customerphoneno);
         return false;
@@ -520,7 +515,7 @@ function validateVendor(vendorFound, _vendoremail, _vendorfirstname, _vendorlast
 {
     if(vendorFound)
     {
-        alert("Login Successful");
+        //alert("Login Successful");
         hideVendorLogin();
         displayVendorProfile(_vendoremail, _vendorfirstname, _vendorlastname, _vendorphoneno, _vendorid, _vendorbusiness, _businesstype, _businessdesc);
         return false;
