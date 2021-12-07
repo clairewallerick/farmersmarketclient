@@ -143,8 +143,10 @@ function searchAdmin(){
     var passwordLogin = document.getElementById("adminpsw").value;
 
     var emailIndex = adminobj.findIndex(obj => obj.adminEmail==emailLogin);
+    console.log(emailIndex);
 
     var passwordIndex = adminobj.findIndex(obj => obj.adminPassword==passwordLogin);
+    console.log(passwordIndex);
 
     var foundAdmin;
     if((emailIndex == passwordIndex) && (emailIndex != -1))
@@ -208,8 +210,9 @@ function searchCustomer(){
     const customerPasswordLogin = document.getElementById("customerpsw").value;
 
     const emailIndex = custobj.findIndex(obj => obj.customerEmail==customerEmailLogin);
-
+    console.log(emailIndex);
     const passwordIndex = custobj.findIndex(obj => obj.customerPassword==customerPasswordLogin);
+    console.log(passwordIndex);
 
     console.log(custobj[emailIndex].customerID); //gets id of logged in customer
     console.log(custobj[emailIndex].customerFName);
@@ -289,6 +292,8 @@ function displayCustomerProfile(_customerfirstname, _customerlastname, _customer
     html+='<button class=\"login-button\" type=\"button\" class=\"cancelbtn\" onclick=\" window.location.href = \'../index.html\';\">Cancel</button>';
     html+='</div></div></div></div></div></section>';
     html+='<br></br>';
+
+    document.getElementById("eventTable").style.display = "block";
 
     // view past and currently registered for events
     html+='<br></br>';
