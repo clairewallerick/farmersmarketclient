@@ -51,7 +51,7 @@ function postCustomerAccount(){
         console.log(response);
         getCustomerAccounts();
     })
-
+    alert("Account Made Successfully");
     console.log("made it 2");
 }
 
@@ -115,6 +115,7 @@ function postVendorAccount(){
     .then((response)=>{
         console.log(response);
         getVendorAccounts();
+        alert("Account Made Successfully");
     })
 }
 
