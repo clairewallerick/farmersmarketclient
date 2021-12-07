@@ -493,6 +493,7 @@ function validateVendor(vendorFound, _vendoremail, _vendorfirstname, _vendorlast
 {
     if(vendorFound)
     {
+        alert("Login Successful")
         hideVendorLogin();
         displayVendorProfile(_vendoremail, _vendorfirstname, _vendorlastname, _vendorphoneno, _vendorid, _vendorbusiness, _businesstype, _businessdesc);
         return false;
