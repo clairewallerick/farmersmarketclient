@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Big Al's Farmers Market</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/BigAl.jpg" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+
+        <!-- calendar links -->
+        <link href="calendar/client/calendar.css" rel ="stylesheet"/>
+        <script type="text/javascript" src = "js/index.js"></script>
+        <script type="text/javascript" src="calendar/client/calendar.js"></script>
+        <script type="text/javascript" src='https://cdn.jsdelivr.net/npm/fullcalendar@5.10.1/main.js'></script>
+
+    </head>
+    <body onload="getFMEvents()" ></body>
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#page-top" onclick=" window.location.href = './index.html';">Log Out</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars ms-1"></i>
+            </button>
+        </div>
+    </nav>
+    <!-- Events-->
+
+    <section class="page-section bg-light" id="team">
+            <div class="text-center">
+                <h2 class="section-heading text-uppercase">Admin</h2>
+            </div>
+            <!-- <div class="row">
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="https://patch.com/img/cdn20/users/24390419/20210327/091102/styles/raw/public/processed_images/Screen%20Shot%202021-03-27%20at%208.10.51%20PM.png" alt="..." />
+                         <h4>Event 1</h4>
+                        <p class="text-muted">2 Weeks Away</p> -->
+                    <!-- </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="https://www.tuscaloosa.com/__aws/posts/2942_huge.jpg?1522853918" alt="..." />
+                        <h4>Event 2</h4>
+                        <p class="text-muted">4 Weeks Away</p> -->
+                    <!-- </div> -->
+                <!-- </div>
+                <div class="col-lg-4">
+                    <div class="team-member">
+                        <img class="mx-auto rounded-circle" src="https://food.unl.edu/newsletters/images/farmers-market-baskets.jpg" alt="..." />
+                            <h4>Event 3</h4> -->
+                        <!-- <p class="text-muted">6 Weeks Away</p> -->
+                    <!-- </div> -->
+                <!-- </div>  -->
+                <!-- <div class="text-center">
+                    <button class="Create-button" onclick=" window.location.href = './AddEvents.html';">Add Event</button>
+                </div> -->
+            <!-- </div> -->
+        <!-- </div> --> 
+    </section>
+    <!-- Caldendar -->
+    <section>   
+        <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+          var calendarEl = document.getElementById('calendar');
+          var calendar = new FullCalendar.Calendar(calendarEl, {
+          initialView: 'dayGridMonth',
+          headerToolbar: {
+              left: 'prev,next,today',
+              center: 'title',
+              right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+          },
+          selectable: true,
+  
+          dateClick: function(info) {
+              alert('Date: ' + info.dateStr);
+              alert('Resource ID: ' + info.resource.id);
+          }
+          });
+          calendar.render();
+        });
+      </script>
+  </head>
+  <body onload="displayCalendar();getFMEvents();">
+    <div class="text-center">
+        <h2 class="section-heading text-uppercase">Manage Events</h2>
+    </div>
+    <div class = "center">
+    <form id = addEvent onsubmit = "return false" method="POST" >
+      <input type="date" id=fmeventdateandtime class = "center">
+      <input type="submit" class="login-button" class = "center" onclick="postFMEvent()" onclick="getDate()" class="signupbtn" value="Create Event"/>
+    </form>
+    </div>
+      <br><br>
+       <div class = "center" id="calendar"></div>
+  </body>
+</section> 
+
+<!-- Upcoming Events -->
+<div class="text-center">
+<h2 class="section-heading text-uppercase">Upcoming Events</h2>
+<body onload = "getFMEvents();displayEventTable()">
+<div class = "text-center">
+    <div class = "row table-wrapper-scroll-y my-custom-scrollbar">
+        <div class = "col-md-12"><div id = "eventTable"></div></div>
+    </div>
+    <div class = "row">
+        <div class = "col-md-12">
+        </body>
+
+
+    <!-- Reports -->
+    <div class="text-center">
+        <br> 
+        <h2 class="section-heading text-uppercase">Reports</h2>
+        <div class="business-type-report">
+            <h4>Distribution of Business Type Report</h4>
+            <label for="EventDate"><b>Choose Event Date: </b></label>
+                <select id="EventDate" onclick="dataEvent1()">
+                <option  name="EventDate" value="date1" >10/9/2021</option>
+                <option  name="EventDate" value="date2">10/23/2021</option>
+                <option  name="EventDate" value="date3">11/6/2021</option>
+                <option  name="EventDate" value="date4">11/20/2021</option>
+                <option  name="EventDate" value="date5">12/4/2021</option>
+                </select>
+
+            <div class = center style = "top: 60px; left: 10px; width: 1000px; height: 600px;">
+            <canvas id="barChart" width fixed ="50" height fixed ="50"></canvas> 
+        </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script>
+                var ctx = document.getElementById('barChart');
+                const barChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                labels: ['Food/Beverage', 'Attire', 'Arts/Crafts', 'Services', 'Miscellaneous'],
+                datasets: [{
+                label: 'Number of Vendors per Category',
+                data: [2, 19, 3, 5, 2],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                ],
+                borderWidth: 1
+            }]
+        },
+                options: {
+                scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+}); 
+</script>
+        </div>
+        <div class="number-of-attendees-report">
+            <h4>Number of Attendees Report</h4>
+            <label for="EventDate"><b>Choose Event Date: </b></label>
+            <select id="EventDate">
+                <option  name="EventDate" value="date1">10/9/2021</option>
+                <option  name="EventDate" value="date2">10/23/2021</option>
+                <option  name="EventDate" value="date3">11/6/2021</option>
+                <option  name="EventDate" value="date4">11/20/2021</option>
+                <option  name="EventDate" value="date5">12/4/2021</option>
+                </select>
+                <div class = "center" style = "top: 20px; left: 10px; width: 500px; height: 500px;">
+                    <canvas id="pieChart" width fixed ="50" height fixed ="50"></canvas> 
+                </div>
+                    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                    <script>
+                    var ctx = document.getElementById('pieChart');
+                    const pieChart = new Chart(ctx, {
+                        type: 'pie',
+                        data: {
+                            labels: ['Adult', 'Child/Senior'],
+                        datasets: [{
+                            label: 'Total Revenue by Ticket Type',
+                            data: [300, 45],
+                            backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(54, 162, 235)',
+                            ],
+                            hoverOffset: 4
+                            }],
+                        }, 
+                    })
+                  
+            </script>
+        </div>
+        <div class="total-revenue-report">
+            <h4>Total Revenue Report</h4>
+            <label for="EventDate"><b>Choose Event Date: </b></label>
+                <select id="EventDate">
+                <option  name="EventDate" value="date1">10/9/2021</option>
+                <option  name="EventDate" value="date2">10/23/2021</option>
+                <option  name="EventDate" value="date3">11/6/2021</option>
+                <option  name="EventDate" value="date4">11/20/2021</option>
+                <option  name="EventDate" value="date5">12/4/2021</option>
+                </select>
+                <div class = "center" style = "top: 20px; left: 10px; width: 1000px; height: 1000px;">
+                    <canvas id="lineChart" width fixed ="50" height fixed ="50"></canvas> 
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+                <script>
+                    var ctx = document.getElementById('lineChart');
+                    const lineChart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: ['Event 1', 'Event 2', 'Event 3', 'Event 4', 'Event 5'],
+                            datasets: [{
+                            label: 'Total Revenue',
+                            data: [70, 45, 80, 21, 89],
+                            fill: false,
+                            borderColor: '#ffc800',
+                            tension: 0.1
+                            }],
+                        }, 
+                    })
+                </script>
+               
+            </div>
+            </script>
+        </div>
+    </div>
+            

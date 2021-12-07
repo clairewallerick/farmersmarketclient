@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script type="text/javascript" src="../js/index.js"></script>
+  <script type="text/javascript" src="../js/jspdf.min.js"></script>
+  <title>Customer Login</title>
+  <!-- <link rel="icon" type="image/x-icon" href="assets/favicon.ico" /> -->
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700" rel="stylesheet" type="text/css" />
+  <link href="../css/styles.css" rel="stylesheet" />
+</head>
+<!-- <body onload="getFMEvents()"></body> -->
+<body onload="searchCustomer()">
+  
+<!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
+          <div class="container">
+              <a class="navbar-brand" id="customerlogout" href="#page-top" onclick=" window.location.href = '../index.html';">Home</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                  Menu
+                  <i class="fas fa-bars ms-1"></i>
+              </button>
+          </div>
+      </nav>
+  <!-- Log In-->
+  <section class="page-section" id="CustLogin">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase" id="custloginheader">Customer Login</h2> 
+            <!-- maybe change the inner html on the header instead -->
+            <body>
+            <!-- <div class="signup"> -->
+              <div class="login">
+                <!-- <form action="../index.html" method="post"> -->
+                  <form onsubmit = "return false"; method="post">
+                    <div class="container">
+                      <label for="email" id="custemaillabel"><b>Email</b></label>
+                      <input type="text" placeholder="Enter Email" id="customeremail" required>
+                  
+                      <label for="psw" id="custpswlabel"><b>Password</b></label>
+                      <input type="password" placeholder="Enter Password" id="customerpsw" required>
+
+                      <!-- <button class ="login-button" type="submit" onclick=" window.location.href = '../index.html';">Login</button> --> 
+                      
+
+                      <!-- <button class ="login-button" type="submit" onclick=" window.location.href = '../index.html';">Login</button> -->
+                      <!-- <input type="submit" class="login-button" onclick = "validateCustomer()" value="Login"/> -->
+                      <input type="submit" class="login-button" onclick = "searchCustomer()" value="Login" id="customerlogin"/>
+                      <!-- <body onload="getFMEvents()"> -->
+                      <div id="customerprofileinfo"></div>
+                      <div id="eventTable"></div>
+                      <!-- <body onload="displayCalendar()"></body> -->
+                    <!-- </body> -->
+                    </div>
+                  </form> 
+            </div>
+    </div>
+</section>
+</body>
+</html>
