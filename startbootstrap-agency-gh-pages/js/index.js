@@ -590,6 +590,8 @@ function displayVendorProfile(_vendoremail, _vendorfirstname, _vendorlastname, _
     //const allBoothsUrl = "https://localhost:5001/api/vendorbooth";
     const allBoothsUrl = "https://farmersmarketapi1.herokuapp.com/api/vendorbooth";
 
+    const eventID = document.getElementById("eventid").value;
+
     fetch(allBoothsUrl).then(function(response){
         console.log(response);
         return response.json();
@@ -613,7 +615,7 @@ function postBooth(_vendorid, _vendorbusiness, _businesstype, _businessdesc){
         },
         body: JSON.stringify({
             boothCost : '50',
-            vendorID: _vendorid,
+            vendorID : _vendorid,
             eventId: eventID
         })
     })
