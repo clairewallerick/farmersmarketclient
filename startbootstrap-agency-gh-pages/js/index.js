@@ -204,7 +204,7 @@ function hideAdminLogin()
 var custobj;
 function searchCustomer(){
     getFMEvents();
-    document.getElementById("eventTable").style.display = "none";
+    document.getElementById("pastEventTable").style.display = "none";
 
     const customersUrl = "https://farmersmarketapi1.herokuapp.com/api/customer";
     //const customersUrl = "https://localhost:5001/api/customer";
@@ -314,7 +314,7 @@ function displayCustomerProfile(_customerfirstname, _customerlastname, _customer
     html+='<br></br>';
 
     // view past and currently registered for events
-    document.getElementById("eventTable").style.display = "block";
+    document.getElementById("pastEventTable").style.display = "block";
     
     document.getElementById("customerlogout").innerHTML = "Logout";
     document.getElementById("customerprofileinfo").innerHTML = html;
@@ -446,7 +446,7 @@ function postSenChildTicket(selectedTicket, intNumTickets, _customerid){
 var vendobj;
 function searchVendor(){
     getFMEvents();
-    document.getElementById("eventTable").style.display = "none";
+    document.getElementById("pastEventTable").style.display = "none";
 
     //const vendorUrl = "https://localhost:5001/api/vendor";
     const vendorUrl = "https://farmersmarketapi1.herokuapp.com/api/vendor";
@@ -557,7 +557,7 @@ function displayVendorProfile(_vendoremail, _vendorfirstname, _vendorlastname, _
     html+='<button class=\"login-button\" type=\"button\" class=\"cancelbtn\" onclick=\" window.location.href = \'../index.html\';\">Cancel</button>'
     html+='</div></div></div></div></section>';
     
-    document.getElementById("eventTable").style.display = "block";
+    document.getElementById("pastEventTable").style.display = "block";
     
     document.getElementById("vendorlogout").innerHTML = "Logout";
     document.getElementById("vendorprofileinfo").innerHTML = html;
