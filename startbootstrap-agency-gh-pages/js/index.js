@@ -590,7 +590,6 @@ function displayVendorProfile(_vendoremail, _vendorfirstname, _vendorlastname, _
     //const allBoothsUrl = "https://localhost:5001/api/vendorbooth";
     const allBoothsUrl = "https://farmersmarketapi1.herokuapp.com/api/vendorbooth";
 
-    const eventID = document.getElementById("eventid").value;
 
     fetch(allBoothsUrl).then(function(response){
         console.log(response);
@@ -605,6 +604,7 @@ function displayVendorProfile(_vendoremail, _vendorfirstname, _vendorlastname, _
 function postBooth(_vendorid, _vendorbusiness, _businesstype, _businessdesc){
     const allBoothsUrl = "https://farmersmarketapi1.herokuapp.com/api/vendorbooth";
     //const allBoothsUrl = "https://localhost:5001/api/vendorbooth";
+    const eventID = document.getElementById("eventid").value;
 
     console.log("made it");
     fetch(allBoothsUrl, {
